@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/back" android:layout_gravity="center"
+	android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="vertical">
+	<LinearLayout android:id="@+id/linearLayout1"
+		android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginLeft="20dip" android:layout_marginBottom="1dip" android:layout_marginTop="27dip">
+		<TextView android:id="@+id/widget_textview"
+			android:layout_height="wrap_content" android:layout_width="wrap_content"
+			android:text="@string/widget_text" android:textColor="@android:color/black" android:layout_gravity="left|center_vertical" android:padding="5dip"></TextView>
+		<TextView android:id="@+id/hnc_hoy" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_gravity="left|center_vertical" android:textColor="@android:color/black" android:textStyle="bold" android:padding="5dip"></TextView>
+		<TextView android:id="@+id/manana" android:text="@string/widget_text2" android:textColor="@android:color/black" android:layout_gravity="left|center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="5dip"></TextView>
+		<TextView android:id="@+id/hnc_mna" android:textStyle="bold" android:textColor="@android:color/black" android:layout_gravity="left|center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="5dip"></TextView>
+		
+		<TextView android:id="@+id/widget_prox"
+			android:layout_height="wrap_content" android:text="@string/widget_text3" android:textColor="@android:color/black" android:layout_gravity="left|center_vertical" android:lines="2" android:layout_width="wrap_content" android:maxWidth="67dip" android:padding="5dip"></TextView>
+		<TextView android:id="@+id/hnc_prox" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_gravity="left|center_vertical" android:textColor="@android:color/black" android:textStyle="bold" android:padding="5dip"></TextView>
+	</LinearLayout>	
+</LinearLayout>
