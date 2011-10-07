@@ -2,16 +2,30 @@ package com.vg.hnc.rules;
 
 import java.util.Calendar;
 
+
+/**
+ * Compute the restriction given a Calendar
+ * @author vincent
+ *
+ */
 public class HNCCompute {
 
-	Calendar cal;
-	int dayOfWeek;
+	private final Calendar cal;
+	private final int dayOfWeek;
 	
+	/**
+	 * HNCCompute constructor
+	 * @param calendar Instance of Calendar
+	 */
 	public HNCCompute(Calendar calendar) {
 		this.cal = calendar;
 		this.dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
 	}
 	
+	/**
+	 * Get the restriction for the current Calendar day
+	 * @return HNCRestriction
+	 */
 	public HNCRestriction getDay() {
 		switch (dayOfWeek) {
 			case Calendar.MONDAY:
@@ -31,10 +45,18 @@ public class HNCCompute {
 		return HNCRestriction.NONE;
 	}
 	
+	/**
+	 * Get the restriction for the next Calendar day
+	 * @return HNCRestriction
+	 */
 	public HNCRestriction getTomorrow() {
 		return getRestrictionInXDays(1);
 	}
 	
+	/**
+	 * Get the restriction for the next Saturday
+	 * @return HNCRestriction
+	 */
 	public HNCRestriction getNextSaturday() {
 		int daysToAdd;
 		if (dayOfWeek == Calendar.SATURDAY) {
@@ -45,6 +67,11 @@ public class HNCCompute {
 		return getRestrictionInXDays(daysToAdd);
 	}
 	
+	/**
+	 * Get the restriction for a day in the future
+	 * @param days number of days in the future
+	 * @return HNCRestriction
+	 */
 	private HNCRestriction getRestrictionInXDays(int days) {
 		Calendar newCal = Calendar.getInstance();
 		newCal.add(Calendar.DAY_OF_YEAR, days);
