@@ -39,7 +39,7 @@ public class HNCCompute {
 			case Calendar.FRIDAY:
 				return HNCRestriction.BLUE;
 			case Calendar.SATURDAY:
-				int weekNumber = cal.get(Calendar.WEEK_OF_MONTH);
+				final int weekNumber = cal.get(Calendar.DAY_OF_WEEK_IN_MONTH);
 				return HNCRestriction.values()[weekNumber-1];
 		}
 		return HNCRestriction.NONE;
